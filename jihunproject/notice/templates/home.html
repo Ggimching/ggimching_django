@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% for notice in posts %}
+        <h1>{{notice.title}}</h1>
+        <p>{{notice.writer}}</p>
+        <p>{{notice.runner}}</p>
+        <p>{{notice.pub_date}}</p>
+        <p>{{notice.summary}}<a href="{% url 'detail' notice.id %}">...more</a></p>     <!--링크를 생성해주는 태그-->>
+  {% endfor %}
+
+  {% if posts.has_previous %}
+    <a href="?page=1">First</a>
+    <a href="?page={{posts.previous_page_number}}">Previous</a>
+  {% endif %}
+
+  <span>{{posts.number}}</span>
+  <span>of</span>
+  <span>{{posts.paginator.num_pages}}</span>
+
+  {% if posts.has_next %}
+    <a href="?page={{posts.next_page_number}}">Next</a>
+    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+  {% endif %}
+
+  <br>
+  <br>
+  <div id="map" style="width:500px;height:400px;"></div>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=51ebc1cc8b28bc5d4288ecc9d8dcdd97"></script>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.5662952,126.9757564), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+    
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다 
+    
+    // 지도에 로드뷰 정보가 있는 도로를 표시하도록 지도타입을 추가합니다
+    map.addOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);    
+    
+    // 아래 코드는 위에서 추가한 로드뷰 도로 정보 지도타입을 제거합니다
+    // map.removeOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);    
+    </script>
+  <br>
+  <br>
+{% endblock %}
+
+
+
+
+

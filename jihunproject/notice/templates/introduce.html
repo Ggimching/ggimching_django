@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            자기소개 시작합니다.
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>이 페이지는 자기소개용 페이지입니다.</strong> 저는 17학번 물류전공이고, 멋쟁이 사자처럼 9기 활동을 하고 있습니다. 활동 닉네임은 낌칭입니다. 감사합니다.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            취미활동
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>이 페이지는 취미활동 소개 페이지입니다.</strong> 워낙에 활동적인 것을 좋아해서 운동을 가장 좋아합니다. 초등학생 때부터 축구를 많이 좋아해서 중학생 때는 학교대표도 했었고, 현재는 에어윙즈 활동 및 학부 소모임 활동 진행 중입니다. 그 외에 헬스, 배드민턴, 수영 가리지 않습니다.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            음식
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>좋아하는 음식 소개 페이지입니다.</strong> 편식이 조금 있는 편이라 채소 종류 조금 못 먹는 것 빼고는 가리지 않습니다. 특히 육류, 해산물, 알콜류에 환장하는 편입니다.
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
